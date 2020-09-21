@@ -2,14 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         //  Stage 1: Hello! What's your name?
         System.out.println("Hello! My name is Aid.");
         System.out.println("I was created in 2020.");
 
         // Stage 2: What's my name?
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please, remind me your name");
         String name = scanner.nextLine();
         System.out.println("What a great name you have, " + name + "!");
+
+        // Stage 3: How old are you?
+        System.out.println("Let me guess your age.");
+        System.out.println("Enter the remainders of dividing your age by 3, 5, and 7.");
+        int remainder3 = scanner.nextInt();
+        int remainder5 = scanner.nextInt();
+        int remainder7 = scanner.nextInt();
+        // Using the Chinese Remainder Theorem, we can calculate the user's age.
+        int age = (remainder3 * 70 + remainder5 * 21 + remainder7 * 15) % 105;
+        System.out.println("Your age is " + age + ". That's a good time to start programming.");
     }
 }
