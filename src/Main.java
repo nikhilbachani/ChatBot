@@ -1,19 +1,19 @@
 import java.util.Scanner;
 
 public class Main {
-    final static Scanner scanner = new Scanner(System.in);
+    static final Scanner scanner = new Scanner(System.in);
 
     /*  Stage 1: Hello! What's your name? */
     static void greet(String assistantName, String birthYear) {
-        System.out.println("Hello! My name is " + assistantName + ".");
-        System.out.println("I was created in " + birthYear + ".");
+        System.out.println(String.format("Hello! My name is %s.", assistantName));
+        System.out.println(String.format("I was created in %s.", birthYear));
     }
 
     /* Stage 2: What's my name? */
     static void remindName() {
         System.out.println("Please, remind me your name.");
         String name = scanner.nextLine();
-        System.out.println("What a great name you have, " + name + "!");
+        System.out.println(String.format("What a great name you have, %s!", name));
     }
 
     /* Stage 3: How old are you? */
@@ -27,7 +27,7 @@ public class Main {
 
         // Using the Chinese Remainder Theorem, we can calculate the user's age.
         int age = (remainder3 * 70 + remainder5 * 21 + remainder7 * 15) % 105;
-        System.out.println("Your age is " + age + ", that's a good time to start programming.");
+        System.out.println(String.format("Your age is %d, that's a good time to start programming.", age));
     }
 
     /* Stage 4: Let's count! */
